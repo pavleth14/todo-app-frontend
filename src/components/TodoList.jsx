@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const TodoList = ({ todos, setTodos, filterStatus, setFilterStatus, loading }) => {
 
-    const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
 
     const handleDelete = async (id) => {
         await fetch(`${API_URL}/todos/${id}`, {

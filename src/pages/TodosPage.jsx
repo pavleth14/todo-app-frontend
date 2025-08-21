@@ -4,7 +4,7 @@ import TodoInput from '../components/TodoInput';
 
 const TodosPages = () => {
     
-    const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
 
     const [todos, setTodos] = useState([]);
     const [filterStatus, setFilterStatus] = useState('all');

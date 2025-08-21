@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const TodoInput = ({ setTodos }) => {
 
-    const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
     
     const [todo, setTodo] = useState('');
     const navigate = useNavigate();

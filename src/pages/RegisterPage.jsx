@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage() {
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
