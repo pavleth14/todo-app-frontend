@@ -8,6 +8,8 @@ export default function LoginPage({ onLogin }) {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  console.log('API_URL:', API_URL);
+
   const login = async () => {
     setError('');
     try {
