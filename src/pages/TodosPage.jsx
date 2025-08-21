@@ -20,7 +20,7 @@ const TodosPages = () => {
             }
 
             try {
-                const response = await fetch(`${API_URL}/todos?filter=${filterStatus}`, {
+                const response = await fetch(`${API_URL}/api/todos?filter=${filterStatus}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json',

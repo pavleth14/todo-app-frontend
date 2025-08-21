@@ -6,7 +6,7 @@ const TodoList = ({ todos, setTodos, filterStatus, setFilterStatus, loading }) =
     const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
 
     const handleDelete = async (id) => {
-        await fetch(`${API_URL}/todos/${id}`, {
+        await fetch(`${API_URL}/api/todos/${id}`, {
             method: 'DELETE',
         });
         setTodos(prev => prev.filter(todo => todo.id !== id));
@@ -14,7 +14,7 @@ const TodoList = ({ todos, setTodos, filterStatus, setFilterStatus, loading }) =
 
     const handleCheckboxCompletedTodo = async (id, completed) => {
         try {
-            const response = await fetch(`${API_URL}/todos/${id}`, {
+            const response = await fetch(`${API_URL}/api/todos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

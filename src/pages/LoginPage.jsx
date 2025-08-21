@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LoginPage({ onLogin }) {
 
   const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,7 +15,7 @@ export default function LoginPage({ onLogin }) {
   const login = async () => {
     setError('');
     try {
-      const res = await fetch(`${API_URL}/login`, {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
