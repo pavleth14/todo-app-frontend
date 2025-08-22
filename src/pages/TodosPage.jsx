@@ -3,7 +3,7 @@ import TodoList from '../components/TodoList';
 import TodoInput from '../components/TodoInput';
 
 const TodosPages = () => {
-    
+
     const API_URL = import.meta.env.VITE_API_URL.replace(/\/$/, '');
 
     const [todos, setTodos] = useState([]);
@@ -44,13 +44,22 @@ const TodosPages = () => {
     }, [filterStatus, token]);
 
     return (
-        <div style={{width: '600px', margin: 'auto', border: '1px solid', padding: '10px'}}>
+        <div
+            style={{
+                width: '100%',
+                maxWidth: '600px',
+                margin: '0 auto',
+                border: '1px solid',
+                padding: '10px',
+                boxSizing: 'border-box',
+            }}
+        >
             <TodoInput setTodos={setTodos} token={token} />
-            <TodoList 
-                todos={todos} 
-                setTodos={setTodos} 
-                filterStatus={filterStatus} 
-                setFilterStatus={setFilterStatus} 
+            <TodoList
+                todos={todos}
+                setTodos={setTodos}
+                filterStatus={filterStatus}
+                setFilterStatus={setFilterStatus}
                 token={token} // ovde mozda ne treba token, u TodoList ga svakako ne koristim za sada
                 loading={loading}
             />
